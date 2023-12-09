@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BetweenDays from '../components/posts/betweenDays/BetweenDays.astro'
+import BetweenYears from '../components/posts/betweenYears/BetweenYears.astro';
+import GetCurrentDate from '../components/posts/getCurrentDate/GetCurrentDate.astro'
+import FirstDayOfMonth from '../components/posts/firstDayOfMonth/FirstDayOfMonth.astro'
+import NowInUTC from '../components/posts/nowInUTC/NowInUTC.astro'
+import FirstMondayCalendar from '../components/posts/firstMondayCalendar/FirstMondayCalendar.astro'
+import CommonDateTimeFormats from '../components/posts/commonDateTimeFormats/CommonDateTimeFormats.astro'
+import RelativeFormats from '../components/posts/relativeFormats/RelativeFormats.astro'
+import YearsBetweenDates from '../components/posts/YearsBetweenDates/yearsBetweenDates.astro'
+---
+<!-- poner el fondo negro con estrellas (espacio) -->
+<Layout title="Easy DateJS">
+	<main class="max-w-4xl m-auto bg-slate-300 bg-opacity-10 rounded-xl backdrop-blur-[3px] shadow-lg shadow-slate-100 mt-12 mb-40">
+		<BetweenDays />
+		<BetweenYears />
+		<GetCurrentDate />
+		<FirstDayOfMonth />
+		<NowInUTC />
+		<FirstMondayCalendar />
+		<CommonDateTimeFormats />
+		<RelativeFormats />
+		<YearsBetweenDates />
+	</main>
+</Layout>

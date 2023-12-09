@@ -1,0 +1,29 @@
+<section class="flex flex-col gap-4">
+	<div class="block md:flex items-baseline">
+		<p class="me-2 w-32 mb-2 md:mb-0" >Insert date:<p/>
+		<input 
+			type="date" 
+			id="firstMondayCalendarCurrentDate" 
+			class="text-center border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-48 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+		>
+	</div>
+	<div class="flex items-baseline h-6">
+		<p class="me-2 mb-2 md:mb-0">First Day: </p>
+		<p id="firstMondayCalendarResult"></p>
+	</div>
+</section>
+
+<script>
+	const date = document.getElementById('firstMondayCalendarCurrentDate')
+
+	date.addEventListener('change', (e) => {
+		const {value} = e.target
+		const newDate = new Date(value)
+		const firstDay = new Date(newDate.getFullYear(), newDate.getMonth(), 1)
+		const firstMondayCalendarResult = document.getElementById('firstMondayCalendarResult')
+		const dayOfWeek = firstDay.getDay()
+		const substractDays = dayOfWeek ? (dayOfWeek - 1) : 6
+		firstMondayCalendarResult.textContent = new Date(firstDay.getFullYear(), firstDay.getMonth(), 1 - substractDays).toDateString()
+	})
+
+</script>

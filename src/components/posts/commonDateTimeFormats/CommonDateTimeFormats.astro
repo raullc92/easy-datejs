@@ -1,0 +1,151 @@
+---
+import Section from "../../Section.astro";
+import CommonDateTimeFormatsMdx from './CommonDateTimeFormatsMdx.mdx'
+
+---
+<Section
+	title="Common DateTime formats"
+	slug="common-datetime-formats"
+>
+	<div class="relative overflow-x-auto" slot="description">
+		<table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+			<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+				<tr>
+					<th scope="col" class="px-6 py-3">Option</th>
+					<th scope="col" class="px-6 py-3">Values</th>
+					<th scope="col" class="px-6 py-3">Examples</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+						Year
+					</th>
+					<td class="px-6 py-4">numeric | 2-digit</td>
+					<td class="px-6 py-4">2023 | 23</td>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">month</th>
+					<td class="px-6 py-4"> numeric | 2-digit | narrow | short | long</td>
+					<td class="px-6 py-4"> 2 | 02 | F | Feb | February</td>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">day</th>
+					<td class="px-6 py-4">numeric | 2-digit</td>
+					<td class="px-6 py-4">2 | 02</td>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">hour</th>
+					<td class="px-6 py-4">numeric | 2-digit</td>
+					<td class="px-6 py-4">2 | 02</td>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">minute</th>
+					<td class="px-6 py-4">numeric | 2-digit</td>
+					<td class="px-6 py-4">2 | 02</td>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">second</th>
+					<td class="px-6 py-4">numeric | 2-digit</td>
+					<td class="px-6 py-4">2 | 02</td>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">weekday</th>
+					<td class="px-6 py-4">narrow | short | long</td>
+					<td class="px-6 py-4">T | Tue | Tuesday</td>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">timeZone</th>
+					<td class="px-6 py-4">[string] | Europe/London | Asia/Shanghai</td>
+					<td class="px-6 py-4"></td>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">timeZoneName</th>
+					<td class="px-6 py-4">short | long</td>
+					<td class="px-6 py-4">CEST | Central European Summer Time</td>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">hour12</th>
+					<td class="px-6 py-4">true | false</td>
+					<td class="px-6 py-4"> 00:05 pm | 12:05</td>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">era</th>
+					<td class="px-6 py-4">narrow | short | long</td>
+					<td class="px-6 py-4">A | A D | Anno Domini</td>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">dateStyle</th>
+					<td class="px-6 py-4"> full | long | medium | short</td>
+					<td class="px-6 py-4"></td>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">timeStyle</th>
+					<td class="px-6 py-4"> full | long | medium | short</td>
+					<td class="px-6 py-4"></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h3 slot="description" class="mt-12 mb-6 text-2xl font-bold">Special options</h3>
+	<h4 slot="description" class="my-6 text-xl">dateStyle</h4>
+	<div class="relative overflow-x-auto" slot="description">
+		<table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+			<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+				<tr>
+					<th scope="col" class="px-6 py-3">Option</th>
+					<th scope="col" class="px-6 py-3">Values</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">full</th>
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">Tuesday, 17 October 2023</th>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">long</th>
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">17 October 2023</th>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">medium</th>
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">17 Oct 2023</th>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">short</th>
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">17/10/2023</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<h4 slot="description" class="my-6 text-xl">timeStyle</h4>
+	<div class="relative overflow-x-auto" slot="description">
+		<table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+			<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+				<tr>
+					<th scope="col" class="px-6 py-3">Option</th>
+					<th scope="col" class="px-6 py-3">Values</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">full</th>
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">12:46:09 Central European Summer Time</th>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">long</th>
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">12:46:09 CEST</th>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">medium</th>
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">12:46:09</th>
+				</tr>
+				<tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">short</th>
+					<th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">12:46</th>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<CommonDateTimeFormatsMdx slot="mdx"/>
+</Section>

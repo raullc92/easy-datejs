@@ -1,0 +1,52 @@
+<section class="flex flex-col gap-4">
+	<div class="block md:flex items-baseline">
+		<p class="me-2 w-32 mb-2 md:mb-0" >Insert date:<p/>
+		<input 
+			type="date" 
+			id="getCurrentDate" 
+			class="text-center border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-48 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+		>
+	</div>
+	<div class="block md:flex items-baseline">
+		<p class="me-2 w-32 mb-2 md:mb-0" >Insert location:<p/>
+		<select
+			id="getCurrentDateLocation"
+			class="text-center border bg-gray-700 border-none text-slate-100 text-sm rounded-lg block w-48 p-2"
+		>
+			<option value=""></option>
+			<option value="en-GB">en-GB</option>
+			<option value="en-US">en-US</option>
+			<option value="ko-KR">ko-KR</option>
+			<option value="es-ES">es-ES</option>
+		</select>
+	</div>
+	<div class="block md:flex items-baseline h-6">
+		<p class="me-2 mb-2 md:mb-0">Result: </p>
+		<p id="getCurrentDateResult"></p>
+	</div>
+</section>
+
+
+<script>
+	const date = document.getElementById('getCurrentDate')
+	const getCurrentDateLocation = document.getElementById('getCurrentDateLocation')
+
+	date.addEventListener('change', (e) => {
+		const {value} = e.target
+		const newDate = new Date(value)
+		const getCurrentDateLocation = document.getElementById('getCurrentDateLocation')?.value
+		const getCurrentDateResult = document.getElementById('getCurrentDateResult')
+		console.log(getCurrentDateLocation)
+		getCurrentDateResult.textContent = newDate.toLocaleDateString(getCurrentDateLocation || undefined)
+
+	})
+	getCurrentDateLocation.addEventListener('change', (e) => {
+		const newDate = document.getElementById('getCurrentDate')?.value
+		const currentDate = new Date(newDate)
+		const getCurrentDateLocation = document.getElementById('getCurrentDateLocation')?.value
+		const getCurrentDateResult = document.getElementById('getCurrentDateResult')
+		getCurrentDateResult.textContent = currentDate.toLocaleDateString(getCurrentDateLocation || undefined)
+
+	})
+
+</script>

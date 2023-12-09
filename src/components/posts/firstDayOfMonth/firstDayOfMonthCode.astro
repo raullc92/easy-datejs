@@ -1,0 +1,35 @@
+<section class="flex flex-col gap-4">
+	<div class="block md:flex items-baseline">
+		<p class="me-2 w-32 mb-2 md:mb-0" >Insert date:<p/>
+		<input 
+			type="date" 
+			id="firstDayOfMonthCurrentDate" 
+			class="text-center border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-48 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+		>
+	</div>
+	<div class="flex items-baseline h-6">
+		<p class="me-2 mb-2 md:mb-0">First Day: </p>
+		<p id="firstDayOfMonth"></p>
+	</div>
+	<div class="flex items-baseline h-6">
+		<p class="me-2 mb-2 md:mb-0">Last Day: </p>
+		<p id="lastDayOfMonth"></p>
+	</div>
+</section>
+
+
+<script>
+	const date = document.getElementById('firstDayOfMonthCurrentDate')
+
+	date.addEventListener('change', (e) => {
+		const {value} = e.target
+		const newDate = new Date(value)
+		const getCurrentDateLocation = document.getElementById('getCurrentDateLocation')?.value
+		const firstDayOfMonth = document.getElementById('firstDayOfMonth')
+		const lastDayOfMonth = document.getElementById('lastDayOfMonth')
+		firstDayOfMonth.textContent = new Date(newDate.getFullYear(), newDate.getMonth(), 1).toDateString()
+		lastDayOfMonth.textContent = new Date(newDate.getFullYear(), newDate.getMonth() + 1, 0).toDateString()
+
+	})
+
+</script>

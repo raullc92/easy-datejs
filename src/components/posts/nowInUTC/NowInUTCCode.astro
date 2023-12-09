@@ -1,0 +1,14 @@
+<section class="flex flex-col gap-4">
+	<div class="block md:flex items-baseline">
+		<p class="me-2 mb-2 md:mb-0">Miliseconds: </p>
+		<p>{Date.now()}</p>
+	</div>
+	<div class="block md:flex items-baseline">
+		<p class="me-2 mb-2 md:mb-0">ISO String: </p>
+		<p>{new Date().toISOString()}</p>
+	</div>
+	<div class="block md:flex items-baseline">
+		<p class="me-2 mb-2 md:mb-0">UTC String: </p>
+		<p>{new Date().toUTCString()}</p>
+	</div>
+</section>

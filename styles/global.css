@@ -1,0 +1,22 @@
+code {
+	padding: 2px 5px;
+	/* background-color: rgb(var(--gray-light)); */
+	border-radius: 2px;
+}
+pre {
+	padding: 1.5em;
+	border-radius: 8px;
+}
+pre > code {
+	all: unset;
+}
+
+body {
+	min-height: 100vh;
+}
+html {
+	/* background-image: url('../public/space.webp'); */
+	background-image: url('../space3.webp');
+	background-size: cover;
+	background-attachment: fixed;
+}

@@ -1,0 +1,49 @@
+<section class="flex flex-col gap-4">
+	<div class="block md:flex items-baseline">
+		<p class="me-2 w-32 mb-2 md:mb-0" >Insert date:<p/>
+		<input 
+			type="date" 
+			id="betweenDates" 
+			class="text-center border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-48 p-2 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+		>
+	</div>
+	<div class="block md:flex items-baseline">
+		<p class="me-2 w-32 mb-2 md:mb-0" >Insert days:<p/>
+		<input 
+			type="number" 
+			id="years" 
+			value="1"
+			class="text-center border bg-gray-700 border-none text-slate-100 text-sm rounded-lg block w-48 p-2"
+			>
+	</div>
+	<div class="block md:flex items-baseline h-6">
+		<p class="me-2 mb-2 md:mb-0">Result: </p>
+		<p id="result"></p>
+	</div>
+</section>
+
+
+<script>
+	const date = document.getElementById('betweenDates')
+	const years = document.getElementById('years')
+
+	date.addEventListener('change', (e) => {
+		const {value} = e.target
+		const newDate = new Date(value)
+		const years = document.getElementById('years')
+		const result = document.getElementById('result')
+		newDate.setFullYear(newDate.getFullYear() + parseInt(years.value))
+		result.textContent = newDate.toISOString()
+
+	})
+	years.addEventListener('change', (e) => {
+		const newDate = document.getElementById('betweenDates').value
+		const currentDate = new Date(newDate)
+		const years = document.getElementById('years')
+		const result = document.getElementById('result')
+		currentDate.setFullYear(currentDate.getFullYear() + parseInt(years.value))
+		result.textContent = currentDate.toISOString()
+
+	})
+
+</script>

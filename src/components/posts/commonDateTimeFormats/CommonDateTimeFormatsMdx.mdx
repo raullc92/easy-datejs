@@ -1,0 +1,40 @@
+```javascript
+	const currentDate = new Date()
+
+	new Intl.DateTimeFormat('en-US', {
+		year: 'numeric',
+		month: 'long',
+		day: '2-digit'
+	}).format(currentDate)
+	// October 17, 2023
+
+	new Intl.DateTimeFormat('es-ES', {
+		year: 'numeric',
+		month: 'long',
+		day: '2-digit'
+	}).format(currentDate)
+	// 17 de octubre de 2023
+
+	new Intl.DateTimeFormat('en-US', {
+		year: 'numeric',
+		month: 'long',
+		day: '2-digit',
+		hour: '2-digit',
+		minute: '2-digit',
+		second: '2-digit',
+		hour12: false
+	}).format(currentDate)
+	// October 17, 2023 at 12:23:11
+
+	new Intl.DateTimeFormat('en-GB', {dateStyle:'long'}).format(current)
+	// 17 October 2023
+
+	new Intl.DateTimeFormat('en-GB', {timeStyle:'long'}).format(current)
+	// 12:46:09 CEST
+
+	new Intl.DateTimeFormat('en-GB', {
+		dateStyle:'long',
+		timeStyle:'long'
+	}).format(current)
+	// 17 October 2023 at 12:46:09 CEST
+```

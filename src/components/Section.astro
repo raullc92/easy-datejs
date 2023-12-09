@@ -1,0 +1,35 @@
+---
+const {title, slug} = Astro.props
+---
+<section class="text-slate-100 p-12">
+	<h2 
+		id={slug} 
+		class="text-4xl font-bold bg-gradient-to-r from-fuchsia-600 to-pink-600 text-transparent bg-clip-text inline">
+		<a href={`#${slug}`} class="hover:border-b-2 me-2">#</a>
+
+		{title}
+	</h2>
+	<div class="mt-6 text-xl">
+		<slot name="description" />
+	</div>
+	<div class="mt-6 text-xl">
+	</div>
+	<!-- <div class=" rounded-md p-6 mt-6 text-lg"> -->
+	<!-- <div 
+		class=" text-gray-700 bg-gradient-to-r from-green-200 via-green-300 to-blue-500 rounded-md p-6 mt-6 text-lg"
+	> -->
+	<!-- <div
+		class="bg-gradient-to-r from-blue-700 via-blue-800 to-gray-900 rounded-md p-6 mt-6 text-lg"
+	> -->
+	<!-- <div
+		class="bg-gradient-to-r from-sky-400 to-sky-200 rounded-md p-6 mt-6 text-lg"
+	> -->
+	<!-- <div
+		class="bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-md p-6 mt-6 text-lg"
+	> -->
+		<slot name="code" />
+	</div>
+	<div class="mt-12">
+		<slot name="mdx" />
+	</div>
+</section>

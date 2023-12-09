@@ -1,0 +1,30 @@
+```javascript
+	const dayFormatAuto = new Intl.RelativeTimeFormat('en', {
+		style: 'long', 
+		numeric: 'auto'
+	})
+	
+	dayFormatAuto.format(-2, 'day')
+	// 2 days ago 
+	dayFormatAuto.format(-1, 'day')
+	// yesterday
+	dayFormatAuto.format(0, 'day')
+	// today 
+	dayFormatAuto.format(1, 'day')
+	// tomorrow 
+	dayFormatAuto.format(2, 'day')
+	// in 2 days 
+
+	const dayFormatAlways = new Intl.RelativeTimeFormat('en', {
+		style: 'long',
+		numeric: 'always' 
+	})
+
+	dayFormatAlways.format(-1, 'month')
+	// 1 month ago
+	dayFormatAlways.format(0, 'month')
+	// in 0 months
+	dayFormatAlways.format(1, 'month')
+	// in 1 months
+
+```
